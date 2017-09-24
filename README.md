@@ -8,22 +8,7 @@ Make sure you are using `ruby 2.2.2`. Open your terminal:
 git clone https://github.com/luisbebop/sinatra-up-demo.git
 cd sinatra-up-demo
 rake package:linux:x86_64
-tar -zxvf server-1.0.0-linux-x86_64.tar.gz
 cd server-1.0.0-linux-x86_64
-```
-
-Create a `up.json` file with the following content (check `Up` config docs for more parameters):
-
-```json
-{
- "name": "demo-ruby"
-}
-```
-
-Create a `.upignore` file to enable `Up` to deploy the `.bundle` config:
-
-```shell
-echo '!.bundle' > .upignore
 ```
 
 Deploy the app using `Up`:

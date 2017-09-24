@@ -70,11 +70,8 @@ def create_package(target)
   # remove old bundler version and install newer one
   sh "find ./ -name \"bundler*\" -type d | xargs rm -rf"
   sh "gem install bundler --version=1.13.6 --no-rdoc --no-ri --install-dir=#{package_dir}/lib/ruby/lib/ruby/gems/2.2.0"
-  # sh "sudo chmod -R 777 #{package_dir}"
-  if !ENV['DIR_ONLY']
-    sh "tar -czf #{package_dir}.tar.gz #{package_dir}"
-    sh "rm -rf #{package_dir}"
-  end
+  sh "cp up.json #{package_dir}/"
+  sh "echo '!.bundle' > #{package_dir}/.upignore"
 end
 
 def download_runtime(target)
