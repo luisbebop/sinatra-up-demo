@@ -30,4 +30,6 @@ Deploy the app using `Up`:
 
 ```shell
 up
+up url
+curl `up url`
 ```
